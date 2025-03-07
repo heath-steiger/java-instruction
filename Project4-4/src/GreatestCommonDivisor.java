@@ -7,25 +7,26 @@ public class GreatestCommonDivisor {
 		Scanner sc = new Scanner(System.in);
 		String choice = "y";
 		while (choice.equalsIgnoreCase("y")) {
-		System.out.print("Enter first number: ");
-		int nbr1 = sc.nextInt(); 
-		System.out.print("Enter second number: ");
-		int nbr2 = sc.nextInt();
-	     
-		
-		while(nbr1 != 0){
-			while (nbr1 >= nbr2 ) {
-				nbr1 -= nbr2;
+			System.out.print("Enter first number: ");
+			int x = sc.nextInt();
+			System.out.print("Enter second number: ");
+			int y = sc.nextInt();
+
+			while (x != 0) {
+				while (y >= x) {
+					y -= x;
+				}
+
+				int temp = x;
+				x = y;
+				y = temp;
 			}
-			
-			   int temp = nbr1;
-	            nbr1 = nbr2;
-	            nbr2 = temp;
+			choice = sc.nextLine();
+			System.out.println("Greatest common divisor: " + y);
+			System.out.print("\nContinue? (y/n): ");
+			choice = sc.nextLine();
 		}
-		System.out.println("Greatest common divisor: " + nbr2);	
-		System.out.print("\nContinue? (y/n): ");
-		choice = sc.nextLine();
-		}
+		System.out.print("\nBye");
 	}
 
 }
