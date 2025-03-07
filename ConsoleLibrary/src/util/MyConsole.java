@@ -90,11 +90,14 @@ public class MyConsole {
 	 {
 	     System.out.println();
 	 }
-	 public static void printHeader(String header) {
-		   int length = header.length();
-	        String line = "=".repeat(length);
+	 public static void printHeader(String header, String sep) {
+	        String line = sep.repeat(header.length());
 	        printLine(header);
 	        printLine(line);
+	 }
+	 public static void printHeader(String header) {
+		 printHeader(header, "=");
+	        
 	 }
 	 
 }

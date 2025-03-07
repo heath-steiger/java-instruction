@@ -7,7 +7,7 @@ public class ConsoleTesterApp {
 		
 		
 		
-		MyConsole.printHeader("GOOOOOOOODBYEEEE");
+		MyConsole.printHeader("GOOOOOOOODBYEEEE","-");
 	}
 
 }
