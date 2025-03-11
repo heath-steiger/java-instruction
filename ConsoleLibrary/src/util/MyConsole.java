@@ -1,5 +1,6 @@
 package util;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MyConsole {
@@ -32,7 +33,7 @@ public class MyConsole {
 				isValid = true;
 			} else {
 				System.err.println("Error - invalid entry. Try again.");
-				sc.nextLine(); // discard the input
+				sc.nextLine(); 
 			}
 		}
 		return result;
@@ -74,6 +75,26 @@ public class MyConsole {
 		 }
 		 return result;
 	 }
+	 public static String promptString(String prompt, List<String> validValues) {
+			String str = "";
+			boolean success = false;
+			while (!success) {
+				str = promptString(prompt);
+//				for (String s: validValues) {
+//					if (s.equalsIgnoreCase(str)) {
+//						success = true;
+//						break;
+//					}
+//				}
+				if (validValues.contains(str)) {
+					success = true;
+				}
+				else {
+					printLine("Invalid value. Try again.");
+				}
+			}
+			return str;
+		}
 	 public static String promptString(String prompt) {
 		 System.out.print(prompt);
 		 return sc.nextLine();
