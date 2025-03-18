@@ -61,18 +61,18 @@ public class WheelOfFortuneApp {
 			case "Solve the Phrase":
 				guess = MyConsole.promptString("Phrase: ");
 				chars = phrase.toCharArray();
-				hiddenChars = hiddenPhrase.toCharArray();
-				if (phrase.indexOf(guess.charAt(i)) == -1) {
+				hiddenChars = hiddenPhrase.toCharArray();   
+				if (guess == phrase) {
 					MyConsole.printLine("Incorrect guess");
 				} else {
 					for (int i = 0; i < chars.length; i++) {
-						if (guess. == chars[i]) {
+						if (guess == chars[i]) {
 							hiddenChars[i] = guess.charAt(0);
 						}
 					}
 					hiddenPhrase = String.valueOf(hiddenChars);
 				}
-//				if (guess == phrase) {
+				//				if (guess == phrase) {
 //					MyConsole.printLine("Guess was correct!");
 //				}else {MyConsole.printLine("Guess was incorrect.");}
 //				
